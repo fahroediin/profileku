@@ -38,17 +38,17 @@ if (!empty($_POST)) {
        $mail->isSMTP();
        $mail->Host = 'smtp.mailtrap.io';
        $mail->SMTPAuth = true;
-       $mail->Username = 'your_smtp_username';
-       $mail->Password = 'your_smtp_password';
+       $mail->Username = 'api';
+       $mail->Password = 'c42c91ef273117e1789a402a20066383';
        $mail->SMTPSecure = 'tls';
        $mail->Port = 2525;
        $mail->setFrom($email, 'Mailtrap Website');
-       $mail->addAddress('example@example.com', 'Me');
+       $mail->addAddress('mailtrap@fahrudin.me', 'Me');
        $mail->Subject = 'New message from your website';
 
        // Enable HTML if needed
        $mail->isHTML(true);
-       $bodyParagraphs = ["Name: {$name}", "Email: {$email}", "Message:", nl2br($message)];
+       $bodyParagraphs = ["Name: {$name}", "Email: {$email}","Subject: {$subject}", "Message:", nl2br($message)];
        $body = join('<br />', $bodyParagraphs);
        $mail->Body = $body;
        echo $body;
