@@ -27,7 +27,7 @@ if (!empty($_POST)) {
    if (empty($errors)) {
        $toEmail = 'info.project1996@gmail.com';
        $emailSubject = 'New email from your contact form';
-       $headers = ['From' => $email, 'Reply-To' => $email, 'Content-type' => 'text/html; charset=utf-8'];
+       $headers = ['From' => $email, 'Reply-To' => $toEmail, 'Content-type' => 'text/html; charset=utf-8'];
        $bodyParagraphs = ["Name: {$name}", "Email: {$email}","Subject: {$subject}","Message:", $message];
        $body = join(PHP_EOL, $bodyParagraphs);
 
@@ -53,7 +53,6 @@ if (!empty($_POST)) {
    if (empty($name)) {
        $errors[] = 'Name is empty';
    }
-
    if (empty($email)) {
        $errors[] = 'Email is empty';
    } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
