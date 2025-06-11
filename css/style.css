@@ -352,13 +352,30 @@ a:hover {
 
 /*--/ CONTACT & FOOTER SECTION /--*/
 .footer-paralax {
-  padding: 4rem 0 0 0;
-  background-color: var(--card-bg-color);
-  border-top: 1px solid var(--border-color);
+  /* Di sini kita menambahkan padding atas dan bawah */
+  padding: 6rem 0 6rem 0; 
+  background-color: transparent; /* Pastikan ini transparan agar gambar terlihat */
+  position: relative;
+  background-attachment: fixed; /* Menambahkan kembali efek parallax */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .footer-paralax .overlay-mf {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(18, 18, 18, 0.85); /* Overlay gelap yang sedikit transparan */
+  display: block; /* Pastikan overlay ini tampil */
+}
+
+/* box-shadow-full sekarang memiliki background semi-transparan agar lebih keren */
+#contact .box-shadow-full {
+    background-color: rgba(30, 30, 30, 0.8);
+    backdrop-filter: blur(5px);
 }
 
 .list-ico {
@@ -392,11 +409,13 @@ a:hover {
   color: var(--bg-color);
 }
 
+/* Ini adalah style untuk footer yang sudah terpisah */
 footer {
   text-align: center;
   color: var(--text-color);
-  padding: 2rem 0;
-  background-color: #0c0c0c; /* Even darker for footer */
+  padding: 2.5rem 0;
+  background-color: #0c0c0c; /* Warna hitam paling gelap untuk footer */
+  border-top: 1px solid var(--border-color);
 }
 
 footer .copyright {
@@ -412,7 +431,6 @@ footer .credits {
 footer .credits a {
   color: var(--primary-color);
 }
-
 /*--/ FORM & BUTTONS /--*/
 .form-control {
   background-color: var(--bg-color);
@@ -483,6 +501,17 @@ footer .credits a {
 .back-to-top i {
   padding-top: 14px;
   color: var(--bg-color);
+}
+
+.footer-paralax {
+  padding: 4rem 0 0 0; /* Kode lama */
+  /* ... */
+}
+
+/* Ubah menjadi */
+.footer-paralax {
+  padding: 4rem 0 2rem 0; /* Tambahkan padding bawah */
+  /* ... */
 }
 
 /*--/ RESPONSIVE /--*/
